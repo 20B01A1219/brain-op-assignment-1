@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Barchart from './Barchart';
+import Noid from './Noid';
 
 function App() {
+  const [id, setId] = useState('');
+  const [submitid, setSubmitId] = useState('');
+  const changeid = (e) => {
+        setSubmitId('');
+         setId(e.target.value);
+      };
+      const submit=(e)=>{
+        if(id >= 1 && id <= 382){
+          setSubmitId(true)
+        }
+        else{
+          setSubmitId(false)
+        }
+       
+      }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input type="number" name="" placeholder='Enter your ID' value={id} onChange = {changeid}/>
+      <button onClick = {submit}>Submit</button>
+      {submitid === false && <Noid/> }
+      {id !== '' && submitid && <Barchart pid = {id}/>}
     </div>
   );
 }
