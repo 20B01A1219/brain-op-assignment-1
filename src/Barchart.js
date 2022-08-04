@@ -73,26 +73,6 @@ array.push(patients[props.pid-1].Tension)
             options = {options}
             />
         </div>
-        {/* <table border = {1}>
-            <thead>
-                <tr>
-                    <th>
-                    name
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    patients.map((x, index)=>(
-                        <tr key = {index}>
-                            <td>
-                                {x.Name}
-                            </td>
-                        </tr>
-                    ))
-                }
-            </tbody>
-        </table> */}
         </center>
     );
 };
